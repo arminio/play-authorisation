@@ -23,13 +23,15 @@ object HmrcBuild extends Build {
         Compile.playFramework,
         Compile.playWS,
         Compile.httpVerbs,
+        Compile.httpVerbsPlay,
         Compile.ficus,
         Test.scalaTest,
         Test.pegdown,
         Test.playTest,
         Test.mockito
       ),
-      Developers()
+      Developers(),
+      version := "100.0-SNAPSHOT"
     )
 }
 
@@ -41,7 +43,8 @@ private object BuildDependencies {
   object Compile {
     val playFramework = "com.typesafe.play" %% "play" % PlayVersion.current % "provided"
     val playWS = ws % "provided"
-    val httpVerbs = "uk.gov.hmrc" %% "http-verbs" % "6.4.0" % "provided"
+    val httpVerbs = "uk.gov.hmrc" %% "http-verbs" % "100.0-SNAPSHOT" % "provided"
+    val httpVerbsPlay = "uk.gov.hmrc" %% "http-verbs-play-25" % "100.0-SNAPSHOT" % "provided"
     val ficus = "net.ceedubs" %% "ficus" % "1.1.1"
   }
 

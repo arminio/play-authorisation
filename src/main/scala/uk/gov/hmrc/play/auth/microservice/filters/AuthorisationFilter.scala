@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 HM Revenue & Customs
+ * Copyright 2017 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,11 +18,10 @@ package uk.gov.hmrc.play.auth.microservice.filters
 
 import play.Routes
 import play.api.mvc._
-import uk.gov.hmrc.play.http.HeaderCarrier
+import uk.gov.hmrc.http.{HeaderCarrier, HeaderNames, LoggingDetails}
 import uk.gov.hmrc.play.auth.controllers.{AuthConfig, AuthParamsControllerConfig}
 import uk.gov.hmrc.play.auth.microservice.connectors._
-import uk.gov.hmrc.play.http.HeaderNames
-import uk.gov.hmrc.play.http.logging.LoggingDetails
+import uk.gov.hmrc.play.HeaderCarrierConverter
 import uk.gov.hmrc.play.http.logging.MdcLoggingExecutionContext._
 
 import scala.concurrent.Future
@@ -45,7 +44,7 @@ trait AuthorisationFilter extends Filter {
     }
 
   def apply(next: (RequestHeader) => Future[Result])(rh: RequestHeader): Future[Result] = {
-    implicit val hc = HeaderCarrier.fromHeadersAndSession(rh.headers)
+    implicit val hc = HeaderCarrierConverter.fromHeadersAndSession(rh.headers)
 
     authConfig(rh) match {
       case Some(authConfig) => isAuthorised(rh, authConfig).flatMap { result =>

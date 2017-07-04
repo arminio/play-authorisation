@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 HM Revenue & Customs
+ * Copyright 2017 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ import play.api.libs.iteratee.Enumerator
 import play.api.libs.json._
 import play.api.libs.ws.WSResponse
 import play.api.mvc.{ResponseHeader, Result}
-import uk.gov.hmrc.play.http.HeaderCarrier
+import uk.gov.hmrc.http.HeaderCarrier
 import uk.gov.hmrc.play.connectors.{Connector, PlayWSRequestBuilder}
-import uk.gov.hmrc.play.http.logging.ConnectionTracing
+import uk.gov.hmrc.http.logging.ConnectionTracing
 
 import scala.concurrent.Future
 import scala.util.{Failure, Success, Try}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 HM Revenue & Customs
+ * Copyright 2017 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import org.scalatest.time.Seconds
 import play.api.mvc.{Result, Results}
 import play.api.test.Helpers._
 import uk.gov.hmrc.play.auth.microservice.connectors.{AuthConnector, AuthRequestParameters, ConfidenceLevel, ResourceToAuthorise}
-import uk.gov.hmrc.play.http.HeaderCarrier
+import uk.gov.hmrc.http.HeaderCarrier
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration.Duration

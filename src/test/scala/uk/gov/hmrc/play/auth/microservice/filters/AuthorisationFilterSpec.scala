@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 HM Revenue & Customs
+ * Copyright 2017 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,10 +25,10 @@ import org.scalatest.{WordSpecLike, Matchers => MatchersResults}
 import play.api.mvc.{AnyContentAsEmpty, RequestHeader, Result, Results}
 import play.api.test.Helpers._
 import play.api.test.{FakeHeaders, FakeRequest}
-import uk.gov.hmrc.play.http.HeaderCarrier
+import uk.gov.hmrc.http.HeaderCarrier
 import uk.gov.hmrc.play.auth.controllers.{AuthConfig, AuthParamsControllerConfig}
 import uk.gov.hmrc.play.auth.microservice.connectors.{AuthConnector, AuthRequestParameters, _}
-import uk.gov.hmrc.play.http.HeaderNames
+import uk.gov.hmrc.http.HeaderNames
 
 import scala.collection.JavaConversions._
 import scala.concurrent.Future
